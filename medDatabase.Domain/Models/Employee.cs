@@ -9,9 +9,9 @@ namespace medDatabase.Domain.Models
         [Required]
         public int Id { get; set; }
 
-        [StringLength(9)]
         [Required]
-        public string Ssn { get; set; }
+        [Range(0, 999999999)]
+        public int Ssn { get; set; }
 
         [Required]
         public DateTime HireDate { get; set; }
