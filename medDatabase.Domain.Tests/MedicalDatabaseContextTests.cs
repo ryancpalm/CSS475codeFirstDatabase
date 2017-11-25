@@ -16,16 +16,6 @@ namespace medDatabase.Domain.Tests
         }
 
         [Test]
-        public void MedicalDatabaseContextCanConnectToServer()
-        {
-            // Act
-            var databaseConnection = _medDbContext.Database.Connection;
-
-            // Assert
-            Assert.That(databaseConnection, Is.Not.Null);
-        }
-
-        [Test]
         public void MedicalDatabaseContextDatabaseExists()
         {
             // Act
