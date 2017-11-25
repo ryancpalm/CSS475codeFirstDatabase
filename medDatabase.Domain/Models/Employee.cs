@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
@@ -10,8 +11,8 @@ namespace medDatabase.Domain.Models
         public int Id { get; set; }
 
         [Required]
-        [Range(0, 999999999)]
-        public int Ssn { get; set; }
+        [SsnValidation]
+        public string Ssn { get; set; }
 
         [Required]
         public DateTime HireDate { get; set; }
