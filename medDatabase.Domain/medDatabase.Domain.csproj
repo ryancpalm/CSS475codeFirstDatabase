@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Contexts\MedicalDatabaseContext.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Genders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

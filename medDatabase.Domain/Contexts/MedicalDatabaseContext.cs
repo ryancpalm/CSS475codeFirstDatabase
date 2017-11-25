@@ -8,12 +8,19 @@ namespace medDatabase.Domain.Contexts
     {
         private readonly ConfigProvider _configProvider;
 
+        public virtual DbSet<Employee> Employee { get; set; }
+
         public MedicalDatabaseContext()
         {
             _configProvider = new ConfigProvider();
-            var medicalDatabaseConnectionStringKey = _configProvider.GetMedicalDatabaseConnectionStringSettings();
+            SetConnectionStringForMedicalDatabase();
         }
 
-        public virtual DbSet<Employee> Employee { get; set; }
+        private void SetConnectionStringForMedicalDatabase()
+        {
+            var medicalDatabaseConnectionStringSettings = _configProvider.GetMedicalDatabaseConnectionStringSettings();
+            var medicalDtabaseConnectionString = medicalDatabaseConnectionStringSettings.ConnectionString;
+            this.Database.Connection.ConnectionString = medicalDtabaseConnectionString;
+        }
     }
 }
