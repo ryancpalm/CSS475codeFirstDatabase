@@ -15,7 +15,7 @@ namespace medDatabase.Domain.Validation
             return ssnString.Length == 9 && IsStringInt(ssnString);
         }
 
-        public static bool IsStringInt(string value)
+        private static bool IsStringInt(string value)
         {
             try
             {

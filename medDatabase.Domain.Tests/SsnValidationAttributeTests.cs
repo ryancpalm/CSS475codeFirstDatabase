@@ -38,5 +38,19 @@ namespace medDatabase.Domain.Tests
             // Assert
             Assert.That(isValid, Is.False);
         }
+
+        [Test]
+        public void SsnValidationAttributeIsNotValidForNonStrings(
+            [Values(null, 32, 16.0d)] object ssn)
+        {
+            // Arrange
+            var ssnValidator = new SsnValidationAttribute();
+
+            // Act
+            var isValid = ssnValidator.IsValid(ssn);
+
+            // Assert
+            Assert.That(isValid, Is.False);
+        }
     }
 }
