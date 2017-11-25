@@ -9,3 +9,6 @@ C:\Users\ryan\Dropbox\School\CSS475\CodeFirstDB\medDatabase\medDatabase\obj\Debu
 C:\Users\ryan\Dropbox\School\CSS475\CodeFirstDB\medDatabase\medDatabase\obj\Debug\medDatabase.csproj.CoreCompileInputs.cache
 C:\Users\ryan\Dropbox\School\CSS475\CodeFirstDB\medDatabase\medDatabase\obj\Debug\medDatabase.exe
 C:\Users\ryan\Dropbox\School\CSS475\CodeFirstDB\medDatabase\medDatabase\obj\Debug\medDatabase.pdb
+F:\Code\GitHub\CSS475codeFirstDatabase\medDatabase\bin\Debug\medDatabase.exe.config
+F:\Code\GitHub\CSS475codeFirstDatabase\medDatabase\obj\Debug\medDatabase.exe
+F:\Code\GitHub\CSS475codeFirstDatabase\medDatabase\obj\Debug\medDatabase.pdb
