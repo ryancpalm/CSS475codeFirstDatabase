@@ -11,7 +11,7 @@ namespace medDatabase.Domain.Models
         public int Id { get; set; }
 
         [Required]
-        [SsnValidation]
+        [SsnValidation(ErrorMessage = "SSN must be a unique nine-digit integer.")]
         public string Ssn { get; set; }
 
         [Required]

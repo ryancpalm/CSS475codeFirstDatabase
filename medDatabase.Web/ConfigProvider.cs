@@ -13,11 +13,6 @@ namespace medDatabase.Web
 
         public ConnectionStringSettings GetMedicalDatabaseConnectionStringSettings()
         {
-            var connectionStrings = new List<ConnectionStringSettings>();
-            foreach (var connectionString in _connectionStrings)
-            {
-                connectionStrings.Add((ConnectionStringSettings) connectionString);
-            }
             var medDbConnectionStringSettings = _connectionStrings[MedicalDatabaseConnectionStringKey];
             return medDbConnectionStringSettings;
         }
