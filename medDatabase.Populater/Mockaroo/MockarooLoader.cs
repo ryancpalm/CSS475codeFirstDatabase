@@ -8,6 +8,7 @@ namespace medDatabase.Populater.Mockaroo
     public class MockarooLoader : ILoader
     {
         public const string EmployeeResourceName = "Employees";
+        public const string RoomResourceName = "Rooms";
 
         public IEnumerable<T> LoadFromResource<T>(string resourceName)
         {

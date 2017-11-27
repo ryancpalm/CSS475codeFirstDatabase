@@ -16,8 +16,20 @@ namespace medDatabase.Populater.Tests
             var employees = populater.GetAllEmployees().ToList();
 
             // Assert
-            Assert.That(employees, Is.Not.Null);
             Assert.That(employees, Is.Not.Empty);
+        }
+
+        [Test]
+        public void PopulaterLoadsRooms()
+        {
+            // Arrange
+            var populater = new Populater();
+            
+            // Act
+            var rooms = populater.GetAllRooms().ToList();
+
+            // Assert
+            Assert.That(rooms, Is.Not.Empty);
         }
     }
 }

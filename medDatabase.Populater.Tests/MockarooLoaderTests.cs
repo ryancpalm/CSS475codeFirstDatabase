@@ -58,5 +58,20 @@ namespace medDatabase.Populater.Tests
             }
             Assert.That(employees.Count, Is.EqualTo(mockarooEmployees.Count));
         }
+
+        [Test]
+        public void MockarooLoaderLoadsMockarooRooms()
+        {
+            // Arrange
+            var mockarooLoader = new MockarooLoader();
+            const string resourceName = MockarooLoader.RoomResourceName;
+
+            // Act
+            var mockarooRooms = mockarooLoader.LoadFromResource<MockarooRoom>(resourceName).ToList();
+
+            // Assert
+            Assert.That(mockarooRooms, Is.Not.Null);
+            Assert.That(mockarooRooms, Is.Not.Empty);
+        }
     }
 }

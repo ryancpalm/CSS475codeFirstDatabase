@@ -11,11 +11,31 @@ namespace medDatabase.Populater
     {
         public IEnumerable<Employee> GetAllEmployees()
         {
-            var mockarooLoader = new MockarooLoader();
             const string employeeResourceName = MockarooLoader.EmployeeResourceName;
-            var mockarooEmployees = mockarooLoader.LoadFromResource<MockarooEmployee>(employeeResourceName);
-            var employees = mockarooEmployees.Select(mockarooEmployee => mockarooEmployee.Convert());
+            var mockarooEmployees = GetAllMockarooObjects<MockarooEmployee>(employeeResourceName);
+            var employees = ConvertAllMockarooObjects(mockarooEmployees);
             return employees;
+        }
+
+        public IEnumerable<Room> GetAllRooms()
+        {
+            const string roomResourceName = MockarooLoader.RoomResourceName;
+            var mockarooRooms = GetAllMockarooObjects<MockarooRoom>(roomResourceName);
+            var rooms = ConvertAllMockarooObjects(mockarooRooms);
+            return rooms;
+        }
+
+        private static IEnumerable<T> ConvertAllMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
+        {
+            var convertedObjects = mockarooObjects.Select(mockarooObject => mockarooObject.Convert());
+            return convertedObjects;
+        }
+
+        private static IEnumerable<T> GetAllMockarooObjects<T>(string resourceName)
+        {
+            var mockarooLoader = new MockarooLoader();
+            var mockarooObjects = mockarooLoader.LoadFromResource<T>(resourceName);
+            return mockarooObjects;
         }
     }
 }

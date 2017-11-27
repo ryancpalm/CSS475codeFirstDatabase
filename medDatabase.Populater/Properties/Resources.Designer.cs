@@ -69,5 +69,15 @@ namespace medDatabase.Populater.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Rooms {
+            get {
+                object obj = ResourceManager.GetObject("Rooms", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
