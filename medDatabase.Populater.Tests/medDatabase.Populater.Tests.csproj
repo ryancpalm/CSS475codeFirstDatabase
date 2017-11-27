@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PopulaterTests.cs" />
     <Compile Include="MockarooEmployeeTests.cs" />
     <Compile Include="MockarooLoaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

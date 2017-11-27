@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using medDatabase.Domain.Models;
 
 namespace medDatabase.Populater.Interfaces
 {
-    public interface IPopulater<out T>
+    public interface IPopulater
     {
-        IEnumerable<T> GetAll();
+        IEnumerable<Employee> GetAllEmployees();
+        //IEnumerable<Model_Name> GetAllModels();
     }
 }
