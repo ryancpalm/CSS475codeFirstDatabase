@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using medDatabase.Domain.Validation;
+﻿using medDatabase.Domain.Validation;
 using NUnit.Framework;
 
 namespace medDatabase.Domain.Tests
