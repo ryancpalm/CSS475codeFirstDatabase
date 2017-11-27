@@ -21,7 +21,6 @@ namespace medDatabase.Populater.Tests
             var mockarooEmployees = mockarooLoader.LoadFromResource<MockarooEmployee>(invalidResourceName).ToList();
 
             // Assert
-            Assert.That(mockarooEmployees, Is.Not.Null);
             Assert.That(mockarooEmployees, Is.Empty);
         }
 
@@ -36,7 +35,6 @@ namespace medDatabase.Populater.Tests
             var mockarooEmployees = mockarooLoader.LoadFromResource<MockarooEmployee>(resourceName).ToList();
 
             // Assert
-            Assert.That(mockarooEmployees, Is.Not.Null);
             Assert.That(mockarooEmployees, Is.Not.Empty);
         }
 
@@ -70,8 +68,21 @@ namespace medDatabase.Populater.Tests
             var mockarooRooms = mockarooLoader.LoadFromResource<MockarooRoom>(resourceName).ToList();
 
             // Assert
-            Assert.That(mockarooRooms, Is.Not.Null);
             Assert.That(mockarooRooms, Is.Not.Empty);
+        }
+
+        [Test]
+        public void MockarooLoaderLoadsMockarooPatients()
+        {
+            // Arrange
+            var mockarooLoader = new MockarooLoader();
+            const string resourceName = MockarooLoader.PatientResourceName;
+
+            // Act
+            var mockarooPatients = mockarooLoader.LoadFromResource<MockarooPatient>(resourceName).ToList();
+
+            // Assert
+            Assert.That(mockarooPatients, Is.Not.Empty);
         }
     }
 }

@@ -121,6 +121,9 @@
   <data name="Employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Employees.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Patients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Mockaroo\Patients.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Rooms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Rooms.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

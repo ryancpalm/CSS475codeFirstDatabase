@@ -25,6 +25,14 @@ namespace medDatabase.Populater
             return rooms;
         }
 
+        public IEnumerable<Patient> GetAllPatients()
+        {
+            const string patientResourceName = MockarooLoader.PatientResourceName;
+            var mockarooPatients = GetAllMockarooObjects<MockarooPatient>(patientResourceName);
+            var patients = ConvertAllMockarooObjects(mockarooPatients);
+            return patients;
+        }
+
         private static IEnumerable<T> ConvertAllMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
         {
             var convertedObjects = mockarooObjects.Select(mockarooObject => mockarooObject.Convert());

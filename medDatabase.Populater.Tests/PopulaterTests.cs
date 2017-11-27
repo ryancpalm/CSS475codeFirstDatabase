@@ -31,5 +31,18 @@ namespace medDatabase.Populater.Tests
             // Assert
             Assert.That(rooms, Is.Not.Empty);
         }
+
+        [Test]
+        public void PopulaterLoadsPatients()
+        {
+            // Arrange
+            var populator = new Populater();
+
+            // Act
+            var patients = populator.GetAllPatients().ToList();
+
+            // Assert
+            Assert.That(patients, Is.Not.Empty);
+        }
     }
 }
