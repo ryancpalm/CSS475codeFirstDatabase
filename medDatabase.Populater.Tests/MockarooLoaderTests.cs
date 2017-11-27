@@ -58,17 +58,17 @@ namespace medDatabase.Populater.Tests
         }
 
         [Test]
-        public void MockarooLoaderLoadsMockarooRooms()
+        public void MockarooLoaderLoadsRooms()
         {
             // Arrange
             var mockarooLoader = new MockarooLoader();
             const string resourceName = MockarooLoader.RoomResourceName;
 
             // Act
-            var mockarooRooms = mockarooLoader.LoadFromResource<MockarooRoom>(resourceName).ToList();
+            var rooms = mockarooLoader.LoadFromResource<Room>(resourceName).ToList();
 
             // Assert
-            Assert.That(mockarooRooms, Is.Not.Empty);
+            Assert.That(rooms, Is.Not.Empty);
         }
 
         [Test]
@@ -83,6 +83,34 @@ namespace medDatabase.Populater.Tests
 
             // Assert
             Assert.That(mockarooPatients, Is.Not.Empty);
+        }
+
+        [Test]
+        public void MockarooLoaderLoadsAddresses()
+        {
+            // Arrange
+            var mockarooLoader = new MockarooLoader();
+            const string resourceName = MockarooLoader.AddressResourceName;
+
+            // Act
+            var addresses = mockarooLoader.LoadFromResource<Address>(resourceName).ToList();
+
+            // Assert
+            Assert.That(addresses, Is.Not.Empty);
+        }
+
+        [Test]
+        public void MockarooLoaderLoadsMockarooPrescriptions()
+        {
+            // Arrange
+            var mockarooLoader = new MockarooLoader();
+            const string resourceName = MockarooLoader.PrescriptionResourceName;
+
+            // Act
+            var mockarooPrescriptions = mockarooLoader.LoadFromResource<MockarooPatient>(resourceName).ToList();
+
+            // Assert
+            Assert.That(mockarooPrescriptions, Is.Not.Empty);
         }
     }
 }

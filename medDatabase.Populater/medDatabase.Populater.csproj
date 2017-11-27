@@ -50,7 +50,7 @@
     <Compile Include="Mockaroo\MockarooLoader.cs" />
     <Compile Include="Mockaroo\Models\MockarooEmployee.cs" />
     <Compile Include="Mockaroo\Models\MockarooPatient.cs" />
-    <Compile Include="Mockaroo\Models\MockarooRoom.cs" />
+    <Compile Include="Mockaroo\Models\MockarooPrescription.cs" />
     <Compile Include="Populater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -79,6 +79,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Mockaroo\Patients.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockaroo\Addresses.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockaroo\Prescriptions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />

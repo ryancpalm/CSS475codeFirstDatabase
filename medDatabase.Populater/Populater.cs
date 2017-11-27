@@ -12,34 +12,48 @@ namespace medDatabase.Populater
         public IEnumerable<Employee> GetAllEmployees()
         {
             const string employeeResourceName = MockarooLoader.EmployeeResourceName;
-            var mockarooEmployees = GetAllMockarooObjects<MockarooEmployee>(employeeResourceName);
-            var employees = ConvertAllMockarooObjects(mockarooEmployees);
+            var mockarooEmployees = GetAllObjectsFromMockarooLoader<MockarooEmployee>(employeeResourceName);
+            var employees = ConvertMockarooObjects(mockarooEmployees);
             return employees;
         }
 
         public IEnumerable<Room> GetAllRooms()
         {
             const string roomResourceName = MockarooLoader.RoomResourceName;
-            var mockarooRooms = GetAllMockarooObjects<MockarooRoom>(roomResourceName);
-            var rooms = ConvertAllMockarooObjects(mockarooRooms);
+            var rooms = GetAllObjectsFromMockarooLoader<Room>(roomResourceName);
             return rooms;
         }
 
         public IEnumerable<Patient> GetAllPatients()
         {
             const string patientResourceName = MockarooLoader.PatientResourceName;
-            var mockarooPatients = GetAllMockarooObjects<MockarooPatient>(patientResourceName);
-            var patients = ConvertAllMockarooObjects(mockarooPatients);
+            var mockarooPatients = GetAllObjectsFromMockarooLoader<MockarooPatient>(patientResourceName);
+            var patients = ConvertMockarooObjects(mockarooPatients);
             return patients;
         }
 
-        private static IEnumerable<T> ConvertAllMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
+        public IEnumerable<Address> GetAllAddresses()
+        {
+            const string addressResourceName = MockarooLoader.AddressResourceName;
+            var addresses = GetAllObjectsFromMockarooLoader<Address>(addressResourceName);
+            return addresses;
+        }
+
+        public IEnumerable<Prescription> GetAllPrescriptions()
+        {
+            const string prescriptionResourceName = MockarooLoader.PrescriptionResourceName;
+            var mockarooPrescriptions = GetAllObjectsFromMockarooLoader<MockarooPrescription>(prescriptionResourceName);
+            var prescriptions = ConvertMockarooObjects(mockarooPrescriptions);
+            return prescriptions;
+        }
+
+        private static IEnumerable<T> ConvertMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
         {
             var convertedObjects = mockarooObjects.Select(mockarooObject => mockarooObject.Convert());
             return convertedObjects;
         }
 
-        private static IEnumerable<T> GetAllMockarooObjects<T>(string resourceName)
+        private static IEnumerable<T> GetAllObjectsFromMockarooLoader<T>(string resourceName)
         {
             var mockarooLoader = new MockarooLoader();
             var mockarooObjects = mockarooLoader.LoadFromResource<T>(resourceName);

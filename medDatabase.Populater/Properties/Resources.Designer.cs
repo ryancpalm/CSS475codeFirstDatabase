@@ -63,6 +63,16 @@ namespace medDatabase.Populater.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Addresses {
+            get {
+                object obj = ResourceManager.GetObject("Addresses", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Employees {
             get {
                 object obj = ResourceManager.GetObject("Employees", resourceCulture);
@@ -76,6 +86,16 @@ namespace medDatabase.Populater.Properties {
         internal static byte[] Patients {
             get {
                 object obj = ResourceManager.GetObject("Patients", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Prescriptions {
+            get {
+                object obj = ResourceManager.GetObject("Prescriptions", resourceCulture);
                 return ((byte[])(obj));
             }
         }

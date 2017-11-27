@@ -8,5 +8,6 @@ namespace medDatabase.Populater.Interfaces
         IEnumerable<Employee> GetAllEmployees();
         IEnumerable<Room> GetAllRooms();
         IEnumerable<Patient> GetAllPatients();
+        IEnumerable<Prescription> GetAllPrescriptions();
     }
 }

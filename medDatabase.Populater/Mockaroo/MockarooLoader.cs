@@ -10,6 +10,8 @@ namespace medDatabase.Populater.Mockaroo
         public const string EmployeeResourceName = "Employees";
         public const string RoomResourceName = "Rooms";
         public const string PatientResourceName = "Patients";
+        public const string AddressResourceName = "Addresses";
+        public const string PrescriptionResourceName = "Prescriptions";
 
         public IEnumerable<T> LoadFromResource<T>(string resourceName)
         {
