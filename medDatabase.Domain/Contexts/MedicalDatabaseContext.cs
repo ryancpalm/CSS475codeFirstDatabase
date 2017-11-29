@@ -8,14 +8,24 @@ namespace medDatabase.Domain.Contexts
     {
         private readonly ConfigProvider _configProvider;
 
-        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<Doctor> Doctors { get; set; }
+        public virtual DbSet<DoctorSpecialty> DoctorSpecialties { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Illness> Illnesses { get; set; }
+        public virtual DbSet<MedicalHistory> MedicalHistories { get; set; }
+        public virtual DbSet<Medication> Medications { get; set; }
+        public virtual DbSet<Nurse> Nurses { get; set; }
+        public virtual DbSet<NurseSpecialty> NurseSpecialties { get; set; }
+        public virtual DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<Room> Rooms { get; set; }
 
         public MedicalDatabaseContext()
         {
             _configProvider = new ConfigProvider();
             SetConnectionStringForMedicalDatabase();
             // TODO: Correct populated objects to use the corresponding object in the appropriate collection
-            // TODO: Add virtual specifier to foreign objects in models w/ foreign keys
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
