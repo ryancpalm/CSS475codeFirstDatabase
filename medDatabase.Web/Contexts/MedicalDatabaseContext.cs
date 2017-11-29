@@ -1,8 +1,7 @@
 ﻿using System.Data.Entity;
 using medDatabase.Domain.Models;
-using medDatabase.Web;
 
-namespace medDatabase.Domain.Contexts
+namespace medDatabase.Web.Contexts
 {
     public class MedicalDatabaseContext : DbContext
     {

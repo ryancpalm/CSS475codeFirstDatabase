@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Web.Tests", "me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Domain.Tests", "medDatabase.Domain.Tests\medDatabase.Domain.Tests.csproj", "{4B41DDCD-6858-46B1-9527-A459E70E098F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Domain.Integration.Tests", "medDatabase.Domain.Integration.Tests\medDatabase.Domain.Integration.Tests.csproj", "{56B2DF42-12D7-4E65-98BB-036FDFDD3565}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Web.Integration.Tests", "medDatabase.Web.Integration.Tests\medDatabase.Web.Integration.Tests.csproj", "{840AD65D-1484-4197-B0D8-4FC48958EE4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{4B41DDCD-6858-46B1-9527-A459E70E098F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B41DDCD-6858-46B1-9527-A459E70E098F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B41DDCD-6858-46B1-9527-A459E70E098F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56B2DF42-12D7-4E65-98BB-036FDFDD3565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56B2DF42-12D7-4E65-98BB-036FDFDD3565}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56B2DF42-12D7-4E65-98BB-036FDFDD3565}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56B2DF42-12D7-4E65-98BB-036FDFDD3565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,7 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2B01427D-C1E9-450F-9003-1A0CC84F8212} = {82D59795-8B5D-4A4F-BA28-ED247768CD40}
 		{4B41DDCD-6858-46B1-9527-A459E70E098F} = {82D59795-8B5D-4A4F-BA28-ED247768CD40}
-		{56B2DF42-12D7-4E65-98BB-036FDFDD3565} = {82D59795-8B5D-4A4F-BA28-ED247768CD40}
+		{840AD65D-1484-4197-B0D8-4FC48958EE4F} = {82D59795-8B5D-4A4F-BA28-ED247768CD40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C3C0F1C-3323-408C-B1B0-2A413E81E8D5}
