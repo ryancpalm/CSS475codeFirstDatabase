@@ -61,6 +61,7 @@
     <Compile Include="Mockaroo\MockarooLoader.cs" />
     <Compile Include="Mockaroo\Models\MockarooAppointment.cs" />
     <Compile Include="Mockaroo\Models\MockarooEmployee.cs" />
+    <Compile Include="Mockaroo\Models\MockarooMedicalHistory.cs" />
     <Compile Include="Mockaroo\Models\MockarooPatient.cs" />
     <Compile Include="Mockaroo\Models\MockarooPrescription.cs" />
     <Compile Include="Models\Address.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Genders.cs" />
     <Compile Include="Models\Illness.cs" />
+    <Compile Include="Models\MedicalHistory.cs" />
     <Compile Include="Models\Medication.cs" />
     <Compile Include="Models\NurseSpecialty.cs" />
     <Compile Include="Models\Patient.cs" />
@@ -107,6 +109,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Mockaroo\Medications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockaroo\Medical Histories.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />

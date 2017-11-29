@@ -14,5 +14,6 @@ namespace medDatabase.Domain.Interfaces
         IEnumerable<Appointment> GetAllAppointments();
         IEnumerable<Illness> GetAllIllnesses();
         IEnumerable<Medication> GetAllMedications();
+        IEnumerable<MedicalHistory> GetAllMedicalHistories();
     }
 }

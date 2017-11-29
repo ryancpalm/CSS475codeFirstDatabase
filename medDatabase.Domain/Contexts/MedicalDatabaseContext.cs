@@ -14,6 +14,8 @@ namespace medDatabase.Domain.Contexts
         {
             _configProvider = new ConfigProvider();
             SetConnectionStringForMedicalDatabase();
+            // TODO: Correct mockaroo data that needs custom lists and date separation
+            // TODO: Configure composite keys, possibly primary keys to be safe.
         }
 
         private void SetConnectionStringForMedicalDatabase()

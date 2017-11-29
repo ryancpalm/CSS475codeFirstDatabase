@@ -113,6 +113,16 @@ namespace medDatabase.Domain.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Medical_Histories {
+            get {
+                object obj = ResourceManager.GetObject("Medical_Histories", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Medications {
             get {
                 object obj = ResourceManager.GetObject("Medications", resourceCulture);

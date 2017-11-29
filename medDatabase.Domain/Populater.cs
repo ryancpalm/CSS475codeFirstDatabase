@@ -73,6 +73,13 @@ namespace medDatabase.Domain
             return medications;
         }
 
+        public IEnumerable<MedicalHistory> GetAllMedicalHistories()
+        {
+            var mockarooMedicalHistories = GetAllObjectsFromMockarooLoader<MockarooMedicalHistory>("Medical_Histories");
+            var medicalHistories = ConvertMockarooObjects(mockarooMedicalHistories);
+            return medicalHistories;
+        }
+
         private static IEnumerable<T> ConvertMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
         {
             var convertedObjects = mockarooObjects.Select(mockarooObject => mockarooObject.Convert());
