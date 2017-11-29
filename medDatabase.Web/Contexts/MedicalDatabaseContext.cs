@@ -47,32 +47,25 @@ namespace medDatabase.Web.Contexts
         private static void SetupNurseKeys(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Nurse>()
-                .HasRequired(n => n.Employee)
-                .WithMany().HasForeignKey(n => n.EmployeeId);
-            modelBuilder.Entity<Nurse>()
-                .HasRequired(n => n.NurseSpecialty)
-                .WithMany().HasForeignKey(n => n.NurseSpecialtyId);
+                .HasKey(n => n.EmployeeId);
         }
 
         private static void SetupDoctorKeys(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Doctor>()
-                .HasRequired(n => n.Employee)
-                .WithMany().HasForeignKey(n => n.EmployeeId);
-            modelBuilder.Entity<Doctor>()
-                .HasRequired(n => n.DoctorSpecialty)
-                .WithMany().HasForeignKey(n => n.DoctorSpecialtyId);
+                .HasKey(n => n.EmployeeId);
         }
 
         private static void SetupAddressKeys(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Address>()
-                .HasRequired(a => a.Patient)
-                .WithMany().HasForeignKey(a => a.PatientId);
+                .HasKey(a => a.PatientId);
         }
 
         private static void SetupPrescriptionKeys(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Prescription>()
+                .HasKey(p => new {p.PatientId, p.DoctorId, p.MedicationId});
             modelBuilder.Entity<Prescription>()
                 .HasRequired(p => p.Patient)
                 .WithMany().HasForeignKey(p => p.PatientId);
@@ -87,6 +80,8 @@ namespace medDatabase.Web.Contexts
         private static void SetupAppointmentKeys(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Appointment>()
+                .HasKey(a => new {a.PatientId, a.DoctorId});
+            modelBuilder.Entity<Appointment>()
                 .HasRequired(a => a.Patient)
                 .WithMany().HasForeignKey(a => a.PatientId);
             modelBuilder.Entity<Appointment>()
@@ -96,6 +91,8 @@ namespace medDatabase.Web.Contexts
 
         private static void SetupMedicalHistoryKeys(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<MedicalHistory>()
+                .HasKey(h => new {h.PatientId, h.IllnessId});
             modelBuilder.Entity<MedicalHistory>()
                 .HasRequired(h => h.Patient)
                 .WithMany().HasForeignKey(h => h.PatientId);
