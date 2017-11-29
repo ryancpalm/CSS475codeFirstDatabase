@@ -1,9 +1,9 @@
 ﻿using System;
+using medDatabase.Domain.Mockaroo.Models;
 using medDatabase.Domain.Validation;
-using medDatabase.Populater.Mockaroo.Models;
 using NUnit.Framework;
 
-namespace medDatabase.Populater.Tests
+namespace medDatabase.Domain.Tests
 {
     [TestFixture]
     public class MockarooEmployeeTests

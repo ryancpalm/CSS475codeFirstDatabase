@@ -1,7 +1,7 @@
 ﻿using medDatabase.Domain.Contexts;
 using NUnit.Framework;
 
-namespace medDatabase.Domain.Tests
+namespace medDatabase.Domain.Integration.Tests
 {
     [TestFixture]
     public class MedicalDatabaseContextTests

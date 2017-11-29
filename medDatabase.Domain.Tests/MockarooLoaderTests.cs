@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using medDatabase.Domain.Mockaroo;
+using medDatabase.Domain.Mockaroo.Models;
 using medDatabase.Domain.Models;
-using medDatabase.Populater.Mockaroo;
-using medDatabase.Populater.Mockaroo.Models;
 using NUnit.Framework;
 
-namespace medDatabase.Populater.Tests
+namespace medDatabase.Domain.Tests
 {
     [TestFixture]
     public class MockarooLoaderTests

@@ -1,8 +1,8 @@
 ﻿using System;
+using medDatabase.Domain.Interfaces;
 using medDatabase.Domain.Models;
-using medDatabase.Populater.Interfaces;
 
-namespace medDatabase.Populater.Mockaroo.Models
+namespace medDatabase.Domain.Mockaroo.Models
 {
     public class MockarooPatient : IMockarooConvertible<Patient>
     {

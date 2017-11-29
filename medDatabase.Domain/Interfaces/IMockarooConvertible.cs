@@ -1,4 +1,4 @@
-﻿namespace medDatabase.Populater.Interfaces
+﻿namespace medDatabase.Domain.Interfaces
 {
     public interface IMockarooConvertible<out T>
     {

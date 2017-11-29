@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace medDatabase.Populater.Interfaces
+namespace medDatabase.Domain.Interfaces
 {
     public interface ILoader
     {

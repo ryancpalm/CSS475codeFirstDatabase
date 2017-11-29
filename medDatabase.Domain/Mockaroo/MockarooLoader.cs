@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using medDatabase.Populater.Interfaces;
+using medDatabase.Domain.Interfaces;
 using Newtonsoft.Json;
 
-namespace medDatabase.Populater.Mockaroo
+namespace medDatabase.Domain.Mockaroo
 {
     public class MockarooLoader : ILoader
     {
@@ -12,6 +12,8 @@ namespace medDatabase.Populater.Mockaroo
         public const string PatientResourceName = "Patients";
         public const string AddressResourceName = "Addresses";
         public const string PrescriptionResourceName = "Prescriptions";
+        public const string DoctorSpecialtyResourceName = "Doctor_Specialties";
+        public const string NurseSpecialtyResourceName = "Nurse_Specialties";
 
         public IEnumerable<T> LoadFromResource<T>(string resourceName)
         {
@@ -22,7 +24,7 @@ namespace medDatabase.Populater.Mockaroo
 
         private static string ReadLinesFromResourceFile(string resourceName)
         {
-            var employeesResource = medDatabase.Populater.Properties.Resources.ResourceManager.GetObject(resourceName);
+            var employeesResource = medDatabase.Domain.Properties.Resources.ResourceManager.GetObject(resourceName);
             if (employeesResource == null)
             {
                 return string.Empty;

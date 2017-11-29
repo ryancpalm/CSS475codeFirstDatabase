@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using medDatabase.Domain.Models;
 
-namespace medDatabase.Populater.Interfaces
+namespace medDatabase.Domain.Interfaces
 {
     public interface IPopulater
     {
@@ -9,5 +9,6 @@ namespace medDatabase.Populater.Interfaces
         IEnumerable<Room> GetAllRooms();
         IEnumerable<Patient> GetAllPatients();
         IEnumerable<Prescription> GetAllPrescriptions();
+        IEnumerable<DoctorSpecialty> GetAllDoctorSpecialties();
     }
 }

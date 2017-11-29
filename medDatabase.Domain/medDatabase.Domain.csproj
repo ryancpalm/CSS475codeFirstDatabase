@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -51,18 +55,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\MedicalDatabaseContext.cs" />
+    <Compile Include="Interfaces\ILoader.cs" />
+    <Compile Include="Interfaces\IMockarooConvertible.cs" />
+    <Compile Include="Interfaces\IPopulater.cs" />
+    <Compile Include="Mockaroo\MockarooLoader.cs" />
+    <Compile Include="Mockaroo\Models\MockarooEmployee.cs" />
+    <Compile Include="Mockaroo\Models\MockarooPatient.cs" />
+    <Compile Include="Mockaroo\Models\MockarooPrescription.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\DoctorSpecialty.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Genders.cs" />
     <Compile Include="Models\Medication.cs" />
+    <Compile Include="Models\NurseSpecialty.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Prescription.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Populater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Validation\SsnValidationAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mockaroo\Addresses.json" />
+    <EmbeddedResource Include="Mockaroo\Employees.json" />
+    <EmbeddedResource Include="Mockaroo\Patients.json" />
+    <EmbeddedResource Include="Mockaroo\Prescriptions.json" />
+    <EmbeddedResource Include="Mockaroo\Rooms.json" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <EmbeddedResource Include="Mockaroo\Doctor Specialties.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mockaroo\Nurse Specialties.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

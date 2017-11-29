@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C16029E-3102-4C8B-A3DD-5A8A0C95E025}</ProjectGuid>
+    <ProjectGuid>{56B2DF42-12D7-4E65-98BB-036FDFDD3565}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>medDatabase.Populater</RootNamespace>
-    <AssemblyName>medDatabase.Populater</AssemblyName>
+    <RootNamespace>medDatabase.Domain.Integration.Tests</RootNamespace>
+    <AssemblyName>medDatabase.Domain.Integration.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,11 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,50 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IMockarooConvertible.cs" />
-    <Compile Include="Interfaces\IPopulater.cs" />
-    <Compile Include="Interfaces\ILoader.cs" />
-    <Compile Include="Mockaroo\MockarooLoader.cs" />
-    <Compile Include="Mockaroo\Models\MockarooEmployee.cs" />
-    <Compile Include="Mockaroo\Models\MockarooPatient.cs" />
-    <Compile Include="Mockaroo\Models\MockarooPrescription.cs" />
-    <Compile Include="Populater.cs" />
+    <Compile Include="MedicalDatabaseContextTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\medDatabase.Domain\medDatabase.Domain.csproj">
       <Project>{82decbc1-6d62-4ba8-8a68-554f04da824a}</Project>
       <Name>medDatabase.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <EmbeddedResource Include="Mockaroo\Employees.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Rooms.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Patients.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Addresses.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Prescriptions.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

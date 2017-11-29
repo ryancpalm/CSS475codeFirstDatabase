@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using medDatabase.Domain.Interfaces;
+using medDatabase.Domain.Mockaroo;
+using medDatabase.Domain.Mockaroo.Models;
 using medDatabase.Domain.Models;
-using medDatabase.Populater.Interfaces;
-using medDatabase.Populater.Mockaroo;
-using medDatabase.Populater.Mockaroo.Models;
 
-namespace medDatabase.Populater
+namespace medDatabase.Domain
 {
     public class Populater : IPopulater
     {
@@ -45,6 +45,20 @@ namespace medDatabase.Populater
             var mockarooPrescriptions = GetAllObjectsFromMockarooLoader<MockarooPrescription>(prescriptionResourceName);
             var prescriptions = ConvertMockarooObjects(mockarooPrescriptions);
             return prescriptions;
+        }
+
+        public IEnumerable<DoctorSpecialty> GetAllDoctorSpecialties()
+        {
+            const string doctorSpecialtiesResourceName = MockarooLoader.DoctorSpecialtyResourceName;
+            var doctorSpecialties = GetAllObjectsFromMockarooLoader<DoctorSpecialty>(doctorSpecialtiesResourceName);
+            return doctorSpecialties;
+        }
+
+        public IEnumerable<NurseSpecialty> GetAllNurseSpecialties()
+        {
+            const string nurseSpecialtyResourceName = MockarooLoader.NurseSpecialtyResourceName;
+            var nurseSpecialties = GetAllObjectsFromMockarooLoader<NurseSpecialty>(nurseSpecialtyResourceName);
+            return nurseSpecialties;
         }
 
         private static IEnumerable<T> ConvertMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)

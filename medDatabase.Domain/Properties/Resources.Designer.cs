@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace medDatabase.Populater.Properties {
+namespace medDatabase.Domain.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace medDatabase.Populater.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("medDatabase.Populater.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("medDatabase.Domain.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -73,9 +73,29 @@ namespace medDatabase.Populater.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Doctor_Specialties {
+            get {
+                object obj = ResourceManager.GetObject("Doctor_Specialties", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Employees {
             get {
                 object obj = ResourceManager.GetObject("Employees", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Nurse_Specialties {
+            get {
+                object obj = ResourceManager.GetObject("Nurse_Specialties", resourceCulture);
                 return ((byte[])(obj));
             }
         }

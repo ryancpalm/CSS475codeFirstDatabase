@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using NUnit.Framework;
 
-namespace medDatabase.Populater.Tests
+namespace medDatabase.Domain.Tests
 {
     [TestFixture]
     public class PopulaterTests
@@ -10,7 +10,7 @@ namespace medDatabase.Populater.Tests
         public void PopulaterLoadsEmployees()
         {
             // Arrange
-            var populater = new Populater();
+            var populater = new Domain.Populater();
 
             // Act
             var employees = populater.GetAllEmployees().ToList();
@@ -23,7 +23,7 @@ namespace medDatabase.Populater.Tests
         public void PopulaterLoadsRooms()
         {
             // Arrange
-            var populater = new Populater();
+            var populater = new Domain.Populater();
             
             // Act
             var rooms = populater.GetAllRooms().ToList();
@@ -36,7 +36,7 @@ namespace medDatabase.Populater.Tests
         public void PopulaterLoadsPatients()
         {
             // Arrange
-            var populator = new Populater();
+            var populator = new Domain.Populater();
 
             // Act
             var patients = populator.GetAllPatients().ToList();
@@ -49,7 +49,7 @@ namespace medDatabase.Populater.Tests
         public void PopulaterLoadsAddresses()
         {
             // Arrange
-            var populater = new Populater();
+            var populater = new Domain.Populater();
             
             // Act
             var addresses = populater.GetAllAddresses().ToList();
@@ -62,13 +62,39 @@ namespace medDatabase.Populater.Tests
         public void PopulaterLoadsPrescriptions()
         {
             // Arrange
-            var populator = new Populater();
+            var populator = new Domain.Populater();
 
             // Act
-            var prescriptions = populator.GetAllPrescriptions();
+            var prescriptions = populator.GetAllPrescriptions().ToList();
 
             // Assert
             Assert.That(prescriptions, Is.Not.Empty);
+        }
+
+        [Test]
+        public void PopulaterLoadsDoctorSpecialties()
+        {
+            // Arrange
+            var populator = new Populater();
+
+            // Act
+            var doctorSpecialties = populator.GetAllDoctorSpecialties().ToList();
+
+            // Assert
+            Assert.That(doctorSpecialties, Is.Not.Empty);
+        }
+
+        [Test]
+        public void PopulaterLoadsNurseSpecialties()
+        {
+            // Arrange
+            var populator = new Populater();
+            
+            // Act
+            var nurseSpecialties = populator.GetAllNurseSpecialties().ToList();
+
+            // Assert
+            Assert.That(nurseSpecialties, Is.Not.Empty);
         }
     }
 }
