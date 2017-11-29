@@ -16,7 +16,6 @@ namespace medDatabase.Domain.Contexts
             SetConnectionStringForMedicalDatabase();
             // TODO: Correct populated objects to use the corresponding object in the appropriate collection
             // TODO: Add virtual specifier to foreign objects in models w/ foreign keys
-            // TODO: Add doctor and nurse mock data
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -100,7 +99,7 @@ namespace medDatabase.Domain.Contexts
         {
             var medicalDatabaseConnectionStringSettings = _configProvider.GetMedicalDatabaseConnectionStringSettings();
             var medicalDtabaseConnectionString = medicalDatabaseConnectionStringSettings.ConnectionString;
-            this.Database.Connection.ConnectionString = medicalDtabaseConnectionString;
+            Database.Connection.ConnectionString = medicalDtabaseConnectionString;
         }
     }
 }

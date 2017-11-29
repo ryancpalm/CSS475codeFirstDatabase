@@ -19,7 +19,7 @@ namespace medDatabase.Domain.Models
         public int RoomId { get; set; }
 
         [Required]
-        public Room Room { get; set; }
+        public virtual Room Room { get; set; }
 
         [Required]
         public string FirstName { get; set; }

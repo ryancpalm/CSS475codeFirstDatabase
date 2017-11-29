@@ -12,13 +12,13 @@ namespace medDatabase.Domain.Models
         public int PatientId { get; set; }
 
         [Required]
-        public Patient Patient { get; set; }
+        public virtual Patient Patient { get; set; }
 
         [Required]
         public int DoctorId { get; set; }
 
         [Required]
-        public Employee Doctor { get; set; }
+        public virtual Employee Doctor { get; set; }
 
         [Required]
         public DateTime DateAndTime { get; set; }
