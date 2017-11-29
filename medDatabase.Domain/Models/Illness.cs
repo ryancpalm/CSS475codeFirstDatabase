@@ -2,7 +2,7 @@
 
 namespace medDatabase.Domain.Models
 {
-    public class NurseSpecialty
+    public class Illness
     {
         [Required]
         public int Id { get; set; }

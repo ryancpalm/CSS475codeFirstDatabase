@@ -11,6 +11,6 @@ namespace medDatabase.Domain.Models
         public string Name { get; set; }
 
         [Required]
-        public int Dosage { get; set; }
+        public int DosageMgPerLbBodyWeight { get; set; }
     }
 }

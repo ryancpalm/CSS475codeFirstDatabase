@@ -7,14 +7,6 @@ namespace medDatabase.Domain.Mockaroo
 {
     public class MockarooLoader : ILoader
     {
-        public const string EmployeeResourceName = "Employees";
-        public const string RoomResourceName = "Rooms";
-        public const string PatientResourceName = "Patients";
-        public const string AddressResourceName = "Addresses";
-        public const string PrescriptionResourceName = "Prescriptions";
-        public const string DoctorSpecialtyResourceName = "Doctor_Specialties";
-        public const string NurseSpecialtyResourceName = "Nurse_Specialties";
-
         public IEnumerable<T> LoadFromResource<T>(string resourceName)
         {
             var fileContents = ReadLinesFromResourceFile(resourceName);

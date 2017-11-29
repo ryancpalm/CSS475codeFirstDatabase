@@ -10,5 +10,9 @@ namespace medDatabase.Domain.Interfaces
         IEnumerable<Patient> GetAllPatients();
         IEnumerable<Prescription> GetAllPrescriptions();
         IEnumerable<DoctorSpecialty> GetAllDoctorSpecialties();
+        IEnumerable<NurseSpecialty> GetAllNurseSpecialties();
+        IEnumerable<Appointment> GetAllAppointments();
+        IEnumerable<Illness> GetAllIllnesses();
+        IEnumerable<Medication> GetAllMedications();
     }
 }
