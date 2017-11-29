@@ -124,6 +124,9 @@
   <data name="Appointments" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Appointments.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Doctors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Mockaroo\Doctors.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Doctor_Specialties" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Doctor Specialties.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -138,6 +141,9 @@
   </data>
   <data name="Medications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Medications.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Nurses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Mockaroo\Nurses.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Nurse_Specialties" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Nurse Specialties.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -31,7 +31,8 @@ namespace medDatabase.Domain
 
         public IEnumerable<Address> GetAllAddresses()
         {
-            var addresses = GetAllObjectsFromMockarooLoader<Address>("Addresses");
+            var mockarooAddresses = GetAllObjectsFromMockarooLoader<MockarooAddress>("Addresses");
+            var addresses = ConvertMockarooObjects(mockarooAddresses);
             return addresses;
         }
 
@@ -78,6 +79,20 @@ namespace medDatabase.Domain
             var mockarooMedicalHistories = GetAllObjectsFromMockarooLoader<MockarooMedicalHistory>("Medical_Histories");
             var medicalHistories = ConvertMockarooObjects(mockarooMedicalHistories);
             return medicalHistories;
+        }
+
+        public IEnumerable<Doctor> GetAllDoctors()
+        {
+            var mockarooDoctors = GetAllObjectsFromMockarooLoader<MockarooDoctor>("Doctors");
+            var doctors = ConvertMockarooObjects(mockarooDoctors);
+            return doctors;
+        }
+
+        public IEnumerable<Nurse> GetAllNurses()
+        {
+            var mockarooNurses = GetAllObjectsFromMockarooLoader<MockarooNurse>("Nurses");
+            var nurses = ConvertMockarooObjects(mockarooNurses);
+            return nurses;
         }
 
         private static IEnumerable<T> ConvertMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)

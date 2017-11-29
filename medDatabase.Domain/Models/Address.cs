@@ -8,6 +8,9 @@ namespace medDatabase.Domain.Models
         public int PatientId { get; set; }
 
         [Required]
+        public virtual Patient Patient { get; set; }
+
+        [Required]
         public int HouseNumber { get; set; }
 
         [Required]

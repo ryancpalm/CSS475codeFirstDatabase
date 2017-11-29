@@ -148,5 +148,31 @@ namespace medDatabase.Domain.Tests
             // Assert
             Assert.That(medicalHistories, Is.Not.Empty);
         }
+
+        [Test]
+        public void PopulaterLoadsDoctors()
+        {
+            // Arrange
+            var populator = new Populater();
+
+            // Act
+            var doctors = populator.GetAllDoctors();
+
+            // Assert
+            Assert.That(doctors, Is.Not.Empty);
+        }
+
+        [Test]
+        public void PopulaterLoadsNurses()
+        {
+            // Arrange
+            var populator = new Populater();
+
+            // Act
+            var nurses = populator.GetAllNurses();
+
+            // Assert
+            Assert.That(nurses, Is.Not.Empty);
+        }
     }
 }
