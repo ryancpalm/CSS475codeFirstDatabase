@@ -19,12 +19,12 @@ namespace medDatabase.Web.Contexts
         public virtual DbSet<NurseSpecialty> NurseSpecialties { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Prescription> Prescriptions { get; set; }
 
         public MedicalDatabaseContext()
         {
             _configProvider = new ConfigProvider();
             SetConnectionStringForMedicalDatabase();
-            // TODO: Correct populated objects to use the corresponding object in the appropriate collection
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

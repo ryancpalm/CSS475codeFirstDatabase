@@ -1,4 +1,6 @@
-﻿using medDatabase.Web.Contexts;
+﻿using System.Linq;
+using medDatabase.Domain.Models;
+using medDatabase.Web.Contexts;
 using NUnit.Framework;
 
 namespace medDatabase.Web.Integration.Tests
@@ -18,11 +20,15 @@ namespace medDatabase.Web.Integration.Tests
         [Test]
         public void MedicalDatabaseContextDatabaseExists()
         {
-            // Act
             var dbExists = _medDbContext.Database.Exists();
-
-            // Assert
             Assert.That(dbExists, Is.True);
+        }
+
+        [Test]
+        public void MedicalDatabaseEmployeesTableIsPopulated()
+        {
+            var employees = _medDbContext.Employees.ToList();
+            Assert.That(employees, Is.Not.Empty);
         }
     }
 }

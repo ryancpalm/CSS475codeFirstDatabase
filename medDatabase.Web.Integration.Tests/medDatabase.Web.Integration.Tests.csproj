@@ -61,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\medDatabase.Domain\medDatabase.Domain.csproj">
+      <Project>{82decbc1-6d62-4ba8-8a68-554f04da824a}</Project>
+      <Name>medDatabase.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\medDatabase.Web\medDatabase.Web.csproj">
       <Project>{6344fdbd-4aa5-435e-99b3-47202f6bf3fd}</Project>
       <Name>medDatabase.Web</Name>

@@ -5,6 +5,7 @@ namespace medDatabase.Domain.Interfaces
 {
     public interface IPopulater
     {
+        IEnumerable<Address> GetAllAddresses();
         IEnumerable<Employee> GetAllEmployees();
         IEnumerable<Room> GetAllRooms();
         IEnumerable<Patient> GetAllPatients();
