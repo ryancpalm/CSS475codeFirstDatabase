@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using medDatabase.Domain.Interfaces;
 
 namespace medDatabase.Domain.Models
 {
-    public class Medication
+    public class Medication : IMedicalDatabaseModel
     {
         [Required]
         public int Id { get; set; }

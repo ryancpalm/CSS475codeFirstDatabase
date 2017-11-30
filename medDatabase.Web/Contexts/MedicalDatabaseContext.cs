@@ -24,6 +24,7 @@ namespace medDatabase.Web.Contexts
         public MedicalDatabaseContext()
         {
             _configProvider = new ConfigProvider();
+            Database.CreateIfNotExists();
             SetConnectionStringForMedicalDatabase();
         }
 

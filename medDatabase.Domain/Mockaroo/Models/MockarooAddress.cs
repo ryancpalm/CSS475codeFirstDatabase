@@ -14,7 +14,7 @@ namespace medDatabase.Domain.Mockaroo.Models
 
         public int HouseNumber { get; set; }
 
-        public string StreetName { get; set; }
+        public string Street { get; set; }
 
         public string City { get; set; }
 
@@ -30,7 +30,8 @@ namespace medDatabase.Domain.Mockaroo.Models
             {
                 PatientId = PatientId,
                 Patient = new Patient { Id = PatientId },
-                StreetName = StreetName,
+                StreetName = Street,
+                HouseNumber = HouseNumber,
                 City = City,
                 State = State,
                 ZipCode = ZipCode,

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using medDatabase.Domain.Interfaces;
 
 namespace medDatabase.Domain.Models
 {
-    public class MedicalHistory
+    public class MedicalHistory : IMedicalDatabaseModel
     {
         [Required]
         public int PatientId { get; set; }
