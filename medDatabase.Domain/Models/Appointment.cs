@@ -4,7 +4,7 @@ using medDatabase.Domain.Interfaces;
 
 namespace medDatabase.Domain.Models
 {
-    public class Appointment : IMedicalDatabaseModel, IHasPatient, IHasEmployee
+    public class Appointment : IHasPatient, IHasEmployee
     {
         [Required]
         public int Id { get; set; }

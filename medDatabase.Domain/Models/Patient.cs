@@ -5,7 +5,7 @@ using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
-    public class Patient : IMedicalDatabaseModel, IHasRoom
+    public class Patient : IHasRoom
     {
         [Key]
         [Required]

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using medDatabase.Domain.Interfaces;
 using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
-    public class Employee : IMedicalDatabaseModel
+    public class Employee
     {
         [Key]
         [Required]

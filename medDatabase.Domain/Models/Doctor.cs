@@ -3,7 +3,7 @@ using medDatabase.Domain.Interfaces;
 
 namespace medDatabase.Domain.Models
 {
-    public class Doctor : IMedicalDatabaseModel, IHasEmployee, IHasDoctorSpecialty
+    public class Doctor : IHasEmployee, IHasDoctorSpecialty
     {
         [Required]
         public int EmployeeId { get; set; }
