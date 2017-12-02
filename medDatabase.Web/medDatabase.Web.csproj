@@ -174,13 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="ConfigProvider.cs" />
-    <Compile Include="Contexts\AttributeResolution\AddressAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\AppointmentAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\DoctorAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\MedicalHistoryAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\NurseAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\PatientAttributeResolver.cs" />
-    <Compile Include="Contexts\AttributeResolution\PrescriptionAttributeResolver.cs" />
+    <Compile Include="Contexts\AttributeResolution\AttributeResolver.cs" />
     <Compile Include="Contexts\MedicalDatabaseContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

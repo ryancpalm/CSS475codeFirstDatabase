@@ -80,11 +80,6 @@ namespace medDatabase.Web.Migrations.MedicalDatabase
             context.SaveChanges();
         }
 
-        private void PopulateEmployees()
-        {
-            
-        }
-
         private static void PopulateTable<T>(IDbSet<T> table, IEnumerable<T> values) where T : class
         {
             foreach (var value in values)

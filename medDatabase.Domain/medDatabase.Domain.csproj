@@ -57,6 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IHasDoctorSpecialty.cs" />
+    <Compile Include="Interfaces\IHasEmployee.cs" />
+    <Compile Include="Interfaces\IHasIllness.cs" />
+    <Compile Include="Interfaces\IHasMedication.cs" />
+    <Compile Include="Interfaces\IHasNurseSpecialty.cs" />
+    <Compile Include="Interfaces\IHasPatient.cs" />
+    <Compile Include="Interfaces\IHasRoom.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IMedicalDatabaseModel.cs" />
     <Compile Include="Interfaces\IMockarooConvertible.cs" />
