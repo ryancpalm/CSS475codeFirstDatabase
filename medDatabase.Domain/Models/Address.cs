@@ -3,13 +3,23 @@ using medDatabase.Domain.Interfaces;
 
 namespace medDatabase.Domain.Models
 {
-    public class Address : IMedicalDatabaseModel
+    public class Address : IMedicalDatabaseModel, IHasPatient
     {
         [Required]
         public int PatientId { get; set; }
 
+        public int GetPatientId()
+        {
+            return PatientId;
+        }
+
         [Required]
         public virtual Patient Patient { get; set; }
+
+        public void SetPatient(Patient patient)
+        {
+            Patient = patient;
+        }
 
         [Required]
         public int HouseNumber { get; set; }

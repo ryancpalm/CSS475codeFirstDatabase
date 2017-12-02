@@ -32,23 +32,23 @@ namespace medDatabase.Web.Migrations.MedicalDatabase
             PopulateTable(context.Rooms, rooms);
 
             var patients = _populater.GetAllPatients().ToList();
-            PatientAttributeResolver.ResolveRooms(patients, rooms);
+            patients.ForEach(p => AttributeResolver.ResolveRoom(p, rooms));
             PopulateTable(context.Patients, patients);
 
             var doctorSpecialties = _populater.GetAllDoctorSpecialties().ToList();
             PopulateTable(context.DoctorSpecialties, doctorSpecialties);
 
             var doctors = _populater.GetAllDoctors().ToList();
-            DoctorAttributeResolver.ResolveDoctorEmployees(doctors, employees);
-            DoctorAttributeResolver.ResolveDoctorSpecialties(doctors, doctorSpecialties);
+            doctors.ForEach(d => AttributeResolver.ResolveEmployee(d, employees));
+            doctors.ForEach(d => AttributeResolver.ResolveDoctorSpecialty(d, doctorSpecialties));
             PopulateTable(context.Doctors, doctors);
 
             var nurseSpecialties = _populater.GetAllNurseSpecialties().ToList();
             PopulateTable(context.NurseSpecialties, nurseSpecialties);
 
             var nurses = _populater.GetAllNurses().ToList();
-            NurseAttributeResolver.ResolveEmployees(nurses, employees);
-            NurseAttributeResolver.ResolveNurseSpecialties(nurses, nurseSpecialties);
+            nurses.ForEach(n => AttributeResolver.ResolveEmployee(n, employees));
+            nurses.ForEach(n => AttributeResolver.ResolveNurseSpecialty(n, nurseSpecialties));
             PopulateTable(context.Nurses, nurses);
 
             var illnesses = _populater.GetAllIllnesses().ToList();
@@ -58,59 +58,31 @@ namespace medDatabase.Web.Migrations.MedicalDatabase
             PopulateTable(context.Medications, medications);
 
             var addresses = _populater.GetAllAddresses().ToList();
-            AddressAttributeResolver.ResolvePatients(addresses, patients);
+            addresses.ForEach(a => AttributeResolver.ResolvePatient(a, patients));
             PopulateTable(context.Addresses, addresses);
 
             var appointments = _populater.GetAllAppointments().ToList();
-            AppointmentAttributeResolver.ResolvePatients(appointments, patients);
-            AppointmentAttributeResolver.ResolveDoctors(appointments, doctors);
+            appointments.ForEach(ap => AttributeResolver.ResolvePatient(ap, patients));
+            appointments.ForEach(ap => AttributeResolver.ResolveEmployee(ap, employees));
             PopulateTable(context.Appointments, appointments);
 
             var medicalHistories = _populater.GetAllMedicalHistories().ToList();
-            MedicalHistoryAttributeResolver.ResolvePatients(medicalHistories, patients);
-            MedicalHistoryAttributeResolver.ResolveIllnesses(medicalHistories, illnesses);
+            medicalHistories.ForEach(mh => AttributeResolver.ResolvePatient(mh, patients));
+            medicalHistories.ForEach(mh => AttributeResolver.ResolveIllness(mh, illnesses));
             PopulateTable(context.MedicalHistories, medicalHistories);
 
             var prescriptions = _populater.GetAllPrescriptions().ToList();
-            PrescriptionAttributeResolver.ResolveDoctors(prescriptions, doctors);
-            PrescriptionAttributeResolver.ResolveMedications(prescriptions, medications);
-            PrescriptionAttributeResolver.ResolvePatients(prescriptions, patients);
+            prescriptions.ForEach(pr => AttributeResolver.ResolveEmployee(pr, employees));
+            prescriptions.ForEach(pr => AttributeResolver.ResolveMedication(pr, medications));
+            prescriptions.ForEach(pr => AttributeResolver.ResolvePatient(pr, patients));
             PopulateTable(context.Prescriptions, prescriptions);
 
-            SaveChanges(context);
+            context.SaveChanges();
         }
 
-
-        private static void SaveChanges(DbContext context)
+        private void PopulateEmployees()
         {
-            try
-            {
-                context.SaveChanges();
-            }
-            catch (DbEntityValidationException ex)
-            {
-                ReportEntityValidationErrorsToConsole(ex);
-            }
-        }
-
-        private static void ReportEntityValidationErrorsToConsole(DbEntityValidationException exception)
-        {
-            var messageBuilder = new StringBuilder();
-
-            foreach (var failure in exception.EntityValidationErrors)
-            {
-                messageBuilder.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
-                foreach (var error in failure.ValidationErrors)
-                {
-                    messageBuilder.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
-                    messageBuilder.AppendLine();
-                }
-            }
-
-            throw new DbEntityValidationException(
-                "Entity Validation Failed - errors follow:\n" +
-                messageBuilder.ToString(), exception
-            );
+            
         }
 
         private static void PopulateTable<T>(IDbSet<T> table, IEnumerable<T> values) where T : class

@@ -25,7 +25,7 @@ namespace medDatabase.Web.Contexts
         {
             _configProvider = new ConfigProvider();
             Database.CreateIfNotExists();
-            SetConnectionStringForMedicalDatabase();
+            //SetConnectionStringForMedicalDatabase();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

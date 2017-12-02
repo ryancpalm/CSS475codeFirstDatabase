@@ -5,7 +5,7 @@ using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
-    public class Patient : IMedicalDatabaseModel
+    public class Patient : IMedicalDatabaseModel, IHasRoom
     {
         [Key]
         [Required]
@@ -19,8 +19,18 @@ namespace medDatabase.Domain.Models
         [Required]
         public int RoomId { get; set; }
 
+        public int GetRoomId()
+        {
+            return RoomId;
+        }
+
         [Required]
         public virtual Room Room { get; set; }
+
+        public void SetRoom(Room room)
+        {
+            Room = room;
+        }
 
         [Required]
         public string FirstName { get; set; }
