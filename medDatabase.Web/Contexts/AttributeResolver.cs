@@ -3,7 +3,7 @@ using System.Linq;
 using medDatabase.Domain.Interfaces;
 using medDatabase.Domain.Models;
 
-namespace medDatabase.Web.Contexts.AttributeResolution
+namespace medDatabase.Web.Contexts
 {
     public static class AttributeResolver
     {

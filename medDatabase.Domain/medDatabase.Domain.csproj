@@ -66,17 +66,8 @@
     <Compile Include="Interfaces\IHasRoom.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IMedicalDatabaseModel.cs" />
-    <Compile Include="Interfaces\IMockarooConvertible.cs" />
     <Compile Include="Interfaces\IPopulater.cs" />
     <Compile Include="Mockaroo\MockarooLoader.cs" />
-    <Compile Include="Mockaroo\Models\MockarooAddress.cs" />
-    <Compile Include="Mockaroo\Models\MockarooAppointment.cs" />
-    <Compile Include="Mockaroo\Models\MockarooDoctor.cs" />
-    <Compile Include="Mockaroo\Models\MockarooEmployee.cs" />
-    <Compile Include="Mockaroo\Models\MockarooMedicalHistory.cs" />
-    <Compile Include="Mockaroo\Models\MockarooNurse.cs" />
-    <Compile Include="Mockaroo\Models\MockarooPatient.cs" />
-    <Compile Include="Mockaroo\Models\MockarooPrescription.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Doctor.cs" />

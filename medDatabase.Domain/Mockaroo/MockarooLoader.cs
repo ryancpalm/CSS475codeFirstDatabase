@@ -21,7 +21,7 @@ namespace medDatabase.Domain.Mockaroo
             {
                 return string.Empty;
             }
-            var memoryStream = new MemoryStream((byte[]) employeesResource);
+            var memoryStream = new MemoryStream((byte[])employeesResource);
             var streamReader = new StreamReader(memoryStream);
             var fileContents = streamReader.ReadToEnd();
             return fileContents;

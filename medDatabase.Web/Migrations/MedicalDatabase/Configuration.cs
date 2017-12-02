@@ -3,7 +3,7 @@ using System.Data.Entity.Validation;
 using System.Text;
 using medDatabase.Domain;
 using medDatabase.Domain.Interfaces;
-using medDatabase.Web.Contexts.AttributeResolution;
+using medDatabase.Web.Contexts;
 
 namespace medDatabase.Web.Migrations.MedicalDatabase
 {

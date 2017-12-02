@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using medDatabase.Domain.Interfaces;
 using medDatabase.Domain.Mockaroo;
-using medDatabase.Domain.Mockaroo.Models;
 using medDatabase.Domain.Models;
 
 namespace medDatabase.Domain
@@ -11,8 +9,7 @@ namespace medDatabase.Domain
     {
         public IEnumerable<Employee> GetAllEmployees()
         {
-            var mockarooEmployees = GetAllObjectsFromMockarooLoader<MockarooEmployee>("Employees");
-            var employees = ConvertMockarooObjects(mockarooEmployees);
+            var employees = GetAllObjectsFromMockarooLoader<Employee>("Employees");
             return employees;
         }
 
@@ -24,22 +21,19 @@ namespace medDatabase.Domain
 
         public IEnumerable<Patient> GetAllPatients()
         {
-            var mockarooPatients = GetAllObjectsFromMockarooLoader<MockarooPatient>("Patients");
-            var patients = ConvertMockarooObjects(mockarooPatients);
+            var patients = GetAllObjectsFromMockarooLoader<Patient>("Patients");
             return patients;
         }
 
         public IEnumerable<Address> GetAllAddresses()
         {
-            var mockarooAddresses = GetAllObjectsFromMockarooLoader<MockarooAddress>("Addresses");
-            var addresses = ConvertMockarooObjects(mockarooAddresses);
+            var addresses = GetAllObjectsFromMockarooLoader<Address>("Addresses");
             return addresses;
         }
 
         public IEnumerable<Prescription> GetAllPrescriptions()
         {
-            var mockarooPrescriptions = GetAllObjectsFromMockarooLoader<MockarooPrescription>("Prescriptions");
-            var prescriptions = ConvertMockarooObjects(mockarooPrescriptions);
+            var prescriptions = GetAllObjectsFromMockarooLoader<Prescription>("Prescriptions");
             return prescriptions;
         }
 
@@ -57,8 +51,7 @@ namespace medDatabase.Domain
 
         public IEnumerable<Appointment> GetAllAppointments()
         {
-            var mockarooAppointments = GetAllObjectsFromMockarooLoader<MockarooAppointment>("Appointments");
-            var appointments = ConvertMockarooObjects(mockarooAppointments);
+            var appointments = GetAllObjectsFromMockarooLoader<Appointment>("Appointments");
             return appointments;
         }
 
@@ -76,29 +69,20 @@ namespace medDatabase.Domain
 
         public IEnumerable<MedicalHistory> GetAllMedicalHistories()
         {
-            var mockarooMedicalHistories = GetAllObjectsFromMockarooLoader<MockarooMedicalHistory>("Medical_Histories");
-            var medicalHistories = ConvertMockarooObjects(mockarooMedicalHistories);
+            var medicalHistories = GetAllObjectsFromMockarooLoader<MedicalHistory>("Medical_Histories");
             return medicalHistories;
         }
 
         public IEnumerable<Doctor> GetAllDoctors()
         {
-            var mockarooDoctors = GetAllObjectsFromMockarooLoader<MockarooDoctor>("Doctors");
-            var doctors = ConvertMockarooObjects(mockarooDoctors);
+            var doctors = GetAllObjectsFromMockarooLoader<Doctor>("Doctors");
             return doctors;
         }
 
         public IEnumerable<Nurse> GetAllNurses()
         {
-            var mockarooNurses = GetAllObjectsFromMockarooLoader<MockarooNurse>("Nurses");
-            var nurses = ConvertMockarooObjects(mockarooNurses);
+            var nurses = GetAllObjectsFromMockarooLoader<Nurse>("Nurses");
             return nurses;
-        }
-
-        private static IEnumerable<T> ConvertMockarooObjects<T>(IEnumerable<IMockarooConvertible<T>> mockarooObjects)
-        {
-            var convertedObjects = mockarooObjects.Select(mockarooObject => mockarooObject.Convert());
-            return convertedObjects;
         }
 
         private static IEnumerable<T> GetAllObjectsFromMockarooLoader<T>(string resourceName)

@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using medDatabase.Domain.Mockaroo;
-using medDatabase.Domain.Mockaroo.Models;
 using medDatabase.Domain.Models;
 using NUnit.Framework;
 
@@ -18,20 +16,20 @@ namespace medDatabase.Domain.Tests
             const string invalidResourceName = "InvalidResourceName";
 
             // Act
-            var mockarooEmployees = mockarooLoader.LoadFromResource<MockarooEmployee>(invalidResourceName).ToList();
+            var mockarooEmployees = mockarooLoader.LoadFromResource<Employee>(invalidResourceName).ToList();
 
             // Assert
             Assert.That(mockarooEmployees, Is.Empty);
         }
 
         [Test]
-        public void MockarooLoaderLoadsMockarooObjects()
+        public void MockarooLoaderLoadsObjects()
         {
             // Arrange
             var mockarooLoader = new MockarooLoader();
 
             // Act
-            var mockarooEmployees = mockarooLoader.LoadFromResource<MockarooEmployee>("Employees").ToList();
+            var mockarooEmployees = mockarooLoader.LoadFromResource<Employee>("Employees").ToList();
 
             // Assert
             Assert.That(mockarooEmployees, Is.Not.Empty);
