@@ -7,6 +7,15 @@ namespace medDatabase.Web.Contexts
 {
     public static class AttributeResolver
     {
+        public static void ResolveSSNs(IEnumerable<IHasSsn> models)
+        {
+            foreach (var model in models)
+            {
+                var dashlessSsn = model.GetSsn().Replace("-", string.Empty);
+                model.SetSsn(dashlessSsn);
+            }
+        }
+
         public static void ResolveEmployee(IHasEmployee model, IEnumerable<Employee> employees)
         {
             var employee = employees.Single(e => e.Id == model.GetEmployeeId());

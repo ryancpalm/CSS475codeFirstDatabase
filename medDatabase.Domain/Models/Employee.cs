@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using medDatabase.Domain.Interfaces;
 using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
-    public class Employee
+    public class Employee : IHasSsn
     {
         [Key]
         [Required]
@@ -13,6 +14,16 @@ namespace medDatabase.Domain.Models
         [Required]
         [SsnValidation(ErrorMessage = "SSN must be a unique nine-digit integer.")]
         public string Ssn { get; set; }
+
+        public string GetSsn()
+        {
+            return Ssn;
+        }
+
+        public void SetSsn(string ssn)
+        {
+            Ssn = ssn;
+        }
 
         [Required]
         public DateTime HireDate { get; set; }

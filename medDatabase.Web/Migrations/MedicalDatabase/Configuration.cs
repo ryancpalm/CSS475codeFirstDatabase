@@ -1,13 +1,10 @@
 using System.Collections.Generic;
-using System.Data.Entity.Validation;
-using System.Text;
 using medDatabase.Domain;
 using medDatabase.Domain.Interfaces;
 using medDatabase.Web.Contexts;
 
 namespace medDatabase.Web.Migrations.MedicalDatabase
 {
-    using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -26,12 +23,14 @@ namespace medDatabase.Web.Migrations.MedicalDatabase
         protected override void Seed(Contexts.MedicalDatabaseContext context)
         {
             var employees = _populater.GetAllEmployees().ToList();
+            AttributeResolver.ResolveSSNs(employees);
             PopulateTable(context.Employees, employees);
 
             var rooms = _populater.GetAllRooms().ToList();
             PopulateTable(context.Rooms, rooms);
 
             var patients = _populater.GetAllPatients().ToList();
+            AttributeResolver.ResolveSSNs(patients);
             patients.ForEach(p => AttributeResolver.ResolveRoom(p, rooms));
             PopulateTable(context.Patients, patients);
 

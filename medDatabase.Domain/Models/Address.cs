@@ -25,7 +25,7 @@ namespace medDatabase.Domain.Models
         public int HouseNumber { get; set; }
 
         [Required]
-        public string StreetName { get; set; }
+        public string Street { get; set; }
 
         [Required]
         public string City { get; set; }

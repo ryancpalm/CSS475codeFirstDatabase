@@ -5,16 +5,25 @@ using medDatabase.Domain.Validation;
 
 namespace medDatabase.Domain.Models
 {
-    public class Patient : IHasRoom
+    public class Patient : IHasRoom, IHasSsn
     {
         [Key]
         [Required]
         public int Id { get; set; }
 
         [Required]
-        [SsnValidation]
-        [StringLength(9)]
+        [SsnValidation(ErrorMessage = "SSN must be a unique nine-digit integer.")]
         public string Ssn { get; set; }
+
+        public string GetSsn()
+        {
+            return Ssn;
+        }
+
+        public void SetSsn(string ssn)
+        {
+            Ssn = ssn;
+        }
 
         [Required]
         public int RoomId { get; set; }

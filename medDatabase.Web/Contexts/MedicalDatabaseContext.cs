@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.Text;
 using medDatabase.Domain.Models;
 
 namespace medDatabase.Web.Contexts
@@ -21,11 +24,36 @@ namespace medDatabase.Web.Contexts
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Prescription> Prescriptions { get; set; }
 
-        public MedicalDatabaseContext()
+        public MedicalDatabaseContext() : base("name=MedicalDatabase")
         {
             _configProvider = new ConfigProvider();
-            Database.CreateIfNotExists();
-            //SetConnectionStringForMedicalDatabase();
+            Database.SetInitializer(new CreateDatabaseIfNotExists<MedicalDatabaseContext>());
+        }
+
+        public override int SaveChanges()
+        {
+            try
+            {
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException validationException)
+            {
+                var messageBuilder = new StringBuilder();
+                foreach(var eve in validationException.EntityValidationErrors)
+                {
+                    var entry = eve.Entry;
+                    var messageBlockHeader = $"- Entity of type \"{entry.Entity.GetType().FullName}\" in state \"{entry.State}\" has the following validation errors:";
+                    messageBuilder.AppendLine(messageBlockHeader);
+
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        var msg =
+                            $"-- Property: \"{ve.PropertyName}\", Value: \"{eve.Entry.CurrentValues.GetValue<object>(ve.PropertyName)}\", Error: \"{ve.ErrorMessage}\"";
+                        messageBuilder.AppendLine(msg);
+                    }
+                }
+                throw new Exception(messageBuilder.ToString());
+            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

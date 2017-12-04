@@ -64,6 +64,7 @@
     <Compile Include="Interfaces\IHasNurseSpecialty.cs" />
     <Compile Include="Interfaces\IHasPatient.cs" />
     <Compile Include="Interfaces\IHasRoom.cs" />
+    <Compile Include="Interfaces\IHasSsn.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IPopulater.cs" />
     <Compile Include="Mockaroo\MockarooLoader.cs" />

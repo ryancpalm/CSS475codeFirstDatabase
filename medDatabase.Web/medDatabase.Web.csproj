@@ -186,6 +186,14 @@
     <Compile Include="Migrations\MedicalDatabase\201711290755599_Migration001.Designer.cs">
       <DependentUpon>201711290755599_Migration001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MedicalDatabase\201712040026274_Migration002.cs" />
+    <Compile Include="Migrations\MedicalDatabase\201712040026274_Migration002.Designer.cs">
+      <DependentUpon>201712040026274_Migration002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MedicalDatabase\201712040228435_Migration003.cs" />
+    <Compile Include="Migrations\MedicalDatabase\201712040228435_Migration003.Designer.cs">
+      <DependentUpon>201712040228435_Migration003.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\MedicalDatabase\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -274,6 +282,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\MedicalDatabase\201711290755599_Migration001.resx">
       <DependentUpon>201711290755599_Migration001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MedicalDatabase\201712040026274_Migration002.resx">
+      <DependentUpon>201712040026274_Migration002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\MedicalDatabase\201712040228435_Migration003.resx">
+      <DependentUpon>201712040228435_Migration003.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

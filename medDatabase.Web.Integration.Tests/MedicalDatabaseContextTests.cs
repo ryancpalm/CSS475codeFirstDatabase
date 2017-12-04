@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using medDatabase.Domain.Models;
 using medDatabase.Web.Contexts;
 using NUnit.Framework;
 
@@ -15,7 +14,7 @@ namespace medDatabase.Web.Integration.Tests
         public void BeforeEach()
         {
             _medDbContext = new MedicalDatabaseContext();
-            //_medDbContext.Database.CreateIfNotExists();
+            _medDbContext.Database.CreateIfNotExists();
         }
 
         [Test]
