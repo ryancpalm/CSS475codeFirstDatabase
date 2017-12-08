@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ae7ef2797fe45e0867ab816cdf90774" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Address" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Appointment" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Doctor" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DoctorSpecialty" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Illness" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MedicalHistory" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Medication" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Nurse" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NurseSpecialty" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Patient" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Prescription" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Room" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_Addresses_dbo_Patients_Patient_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Appointments_dbo_Employees_DoctorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Appointments_dbo_Patients_PatientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Doctors_dbo_DoctorSpecialties_DoctorSpecialtyId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Doctors_dbo_Employees_Employee_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Nurses_dbo_Employees_Employee_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Prescriptions_dbo_Employees_DoctorId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_MedicalHistories_dbo_Illnesses_IllnessId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_MedicalHistories_dbo_Patients_PatientId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Prescriptions_dbo_Medications_MedicationId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Nurses_dbo_NurseSpecialties_NurseSpecialtyId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Patients_dbo_Rooms_RoomId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_Prescriptions_dbo_Patients_PatientId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -69,10 +69,6 @@
       <Project>{82decbc1-6d62-4ba8-8a68-554f04da824a}</Project>
       <Name>medDatabase.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\medDatabase.Web\medDatabase.Web.csproj">
-      <Project>{6344fdbd-4aa5-435e-99b3-47202f6bf3fd}</Project>
-      <Name>medDatabase.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

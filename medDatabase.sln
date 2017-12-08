@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Domain", "medDatabase.Domain\medDatabase.Domain.csproj", "{82DECBC1-6D62-4BA8-8A68-554F04DA824A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Web", "medDatabase.Web\medDatabase.Web.csproj", "{6344FDBD-4AA5-435E-99B3-47202F6BF3FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{82D59795-8B5D-4A4F-BA28-ED247768CD40}"
 EndProject
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Domain.Tests", "medDatabase.Domain.Tests\medDatabase.Domain.Tests.csproj", "{4B41DDCD-6858-46B1-9527-A459E70E098F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Web.Integration.Tests", "medDatabase.Web.Integration.Tests\medDatabase.Web.Integration.Tests.csproj", "{840AD65D-1484-4197-B0D8-4FC48958EE4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "medDatabase.Web", "medDatabase\medDatabase.Web.csproj", "{DECEA7CB-6E6F-4E8A-AF18-27BE76FD1302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{82DECBC1-6D62-4BA8-8A68-554F04DA824A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DECBC1-6D62-4BA8-8A68-554F04DA824A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DECBC1-6D62-4BA8-8A68-554F04DA824A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6344FDBD-4AA5-435E-99B3-47202F6BF3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6344FDBD-4AA5-435E-99B3-47202F6BF3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6344FDBD-4AA5-435E-99B3-47202F6BF3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6344FDBD-4AA5-435E-99B3-47202F6BF3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B01427D-C1E9-450F-9003-1A0CC84F8212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B01427D-C1E9-450F-9003-1A0CC84F8212}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B01427D-C1E9-450F-9003-1A0CC84F8212}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{840AD65D-1484-4197-B0D8-4FC48958EE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECEA7CB-6E6F-4E8A-AF18-27BE76FD1302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECEA7CB-6E6F-4E8A-AF18-27BE76FD1302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECEA7CB-6E6F-4E8A-AF18-27BE76FD1302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECEA7CB-6E6F-4E8A-AF18-27BE76FD1302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
