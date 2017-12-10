@@ -94,6 +94,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Mockaroo\Addresses.json" />
     <EmbeddedResource Include="Mockaroo\Employees.json" />
+    <EmbeddedResource Include="Mockaroo\Illnesses.json" />
+    <EmbeddedResource Include="Mockaroo\Medical Histories.json" />
     <EmbeddedResource Include="Mockaroo\Patients.json" />
     <EmbeddedResource Include="Mockaroo\Prescriptions.json" />
     <EmbeddedResource Include="Mockaroo\Rooms.json" />
@@ -111,13 +113,7 @@
     <EmbeddedResource Include="Mockaroo\Appointments.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Illnesses.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Mockaroo\Medications.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mockaroo\Medical Histories.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Mockaroo\Doctors.json">

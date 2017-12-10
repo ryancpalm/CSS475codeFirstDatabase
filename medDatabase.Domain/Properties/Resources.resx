@@ -133,12 +133,6 @@
   <data name="Employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Employees.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Mockaroo\Illnesses.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Medical_Histories" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Mockaroo\Medical Histories.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Medications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Medications.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -156,5 +150,11 @@
   </data>
   <data name="Rooms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Mockaroo\Rooms.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Illnesses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Mockaroo\Illnesses.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Medical_Histories" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Mockaroo\Medical Histories.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

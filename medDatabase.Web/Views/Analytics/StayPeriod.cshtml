@@ -1,0 +1,11 @@
+﻿@model medDatabase.Web.Models.StayPeriodInputViewModel
+@{
+    ViewBag.Title = "StayPeriod";
+}
+
+<h2>StayPeriod</h2>
+@using (Html.BeginForm("StayPeriod", "Analytics"))
+{
+    @Html.DropDownListFor(m => m.IllnessName, Model.Illnesses)
+    <input type="submit" value="Analyze" id="submitButton"/>
+}
