@@ -21,7 +21,7 @@ namespace medDatabase.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MedicalDatabase", throwIfV1Schema: false)
         {
         }
 

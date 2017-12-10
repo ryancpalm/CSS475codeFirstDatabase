@@ -8,7 +8,6 @@ using medDatabase.Web.Models;
 
 namespace medDatabase.Web.Controllers
 {
-    [Authorize]
     public class AnalyticsController : Controller
     {
         private readonly MedicalDatabaseContext _dbContext;

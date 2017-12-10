@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Refills)
         </th>
         <th>
@@ -27,7 +24,7 @@
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.Ssn)
+            @Html.DisplayNameFor(model => model.Doctor.Ssn)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Medication.Name)
@@ -41,9 +38,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Refills)
         </td>
         <td>
@@ -56,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.Ssn)
+            @Html.DisplayFor(modelItem => item.Doctor.Ssn)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Medication.Name)

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Data.Entity.Validation;
 using System.Text;
 using medDatabase.Domain.Models;
+using medDatabase.Web.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace medDatabase.Web.Contexts
 {
-    public class MedicalDatabaseContext : DbContext
+    [DbConfigurationType(typeof(MedicalDbConfiguration))]
+    public class MedicalDatabaseContext : IdentityDbContext
     {
         private readonly ConfigProvider _configProvider;
 
@@ -27,7 +31,6 @@ namespace medDatabase.Web.Contexts
         public MedicalDatabaseContext() : base("name=MedicalDatabase")
         {
             _configProvider = new ConfigProvider();
-            Database.SetInitializer(new CreateDatabaseIfNotExists<MedicalDatabaseContext>());
         }
 
         public override int SaveChanges()
@@ -58,6 +61,7 @@ namespace medDatabase.Web.Contexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             SetupEmployeeKeys(modelBuilder);
             SetupNurseKeys(modelBuilder);
             SetupDoctorKeys(modelBuilder);

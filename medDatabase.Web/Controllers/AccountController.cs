@@ -134,9 +134,12 @@ namespace medDatabase.Web.Controllers
             }
         }
 
+        // To re-enable user registration, uncomment the AllowAnonymous attributes on
+        // Register and Register post.
+
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -145,7 +148,7 @@ namespace medDatabase.Web.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
