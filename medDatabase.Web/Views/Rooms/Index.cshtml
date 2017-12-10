@@ -1,0 +1,33 @@
+﻿@model IEnumerable<medDatabase.Web.Models.RoomViewModel>
+@{
+    ViewBag.Title = "Rooms";
+}
+
+<h2>Rooms</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOccupied)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomId)
+            </td>
+            @if (item.IsOccupied)
+            {
+                <td bgcolor="#ff0000">Occupied</td>
+            }
+            else
+            {
+                <td bgcolor="#00ff00">Available</td>
+            }
+        </tr>
+    }
+</table>

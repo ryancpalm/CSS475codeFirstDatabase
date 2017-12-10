@@ -1,0 +1,53 @@
+﻿@model medDatabase.Web.Models.StayPeriodVisualizationViewModel
+@{
+    ViewBag.Title = "StayPeriodVisualization";
+}
+
+<h2>Stay Period Analysis</h2>
+@if (!Model.StayPeriodsInDays.Any())
+{
+    <p>
+        No one with <strong>@Model.Illness.Name</strong> has every left the hospital...
+    </p>
+}
+else
+{
+    <p>
+        <strong>Average Stay Period:</strong> @Math.Ceiling(Model.StayPeriodsInDays.Average()) Days
+    </p>
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plotly.js"></script>
+    <div id="stayPeriodBarChart"></div>
+    <script type="text/javascript">
+        function camelize(str) {
+            return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        }
+
+        var x = [];
+        var y = [];
+        @for (var i = 0; i < Model.StayPeriodsInDays.Count(); i++)
+        {
+            @:x[@i] = @i;
+            @:y[@i] = @Math.Abs(Model.StayPeriodsInDays.ElementAt(i));
+        }
+
+        var trace = {
+            x: x,
+            y: y,
+            type: 'bar'
+        };
+        var data = [trace];
+        var layout = {
+            title: "Stay Period for Patients with " + camelize("@Model.Illness.Name"),
+            xaxis: {
+                title: "Patient Number From Sample"
+            },
+            yaxis: {
+                title: "Stay Period (Days)"
+            },
+            bargap: 0
+        };
+        Plotly.newPlot('stayPeriodBarChart', data, layout);
+    </script>
+}

@@ -1,0 +1,14 @@
+﻿@model medDatabase.Web.Models.StayPeriodInputViewModel
+@{
+    ViewBag.Title = "StayPeriod";
+}
+
+<h2>Stay Period Visualizer</h2>
+<p>
+    Analyze Stay Period For: 
+    @using (Html.BeginForm("StayPeriod", "Analytics"))
+    {
+        @Html.DropDownListFor(m => m.IllnessName, Model.Illnesses)
+        <input type="submit" value="Analyze" id="submitButton"/>
+    }
+</p>

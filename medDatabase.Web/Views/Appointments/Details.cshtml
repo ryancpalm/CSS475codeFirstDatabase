@@ -1,0 +1,50 @@
+﻿@model medDatabase.Domain.Models.Appointment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.Ssn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Ssn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.Ssn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Ssn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
