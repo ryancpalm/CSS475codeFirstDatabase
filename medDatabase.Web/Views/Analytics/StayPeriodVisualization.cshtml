@@ -21,36 +21,33 @@ else
 
     <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="~/Scripts/plotly.js"></script>
-    <div id="stayPeriodBarChart"></div>
+    <div id="stayPeriodChart"></div>
     <script type="text/javascript">
         function camelize(str) {
             return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
         }
 
         var x = [];
-        var y = [];
         @for (var i = 0; i < Model.StayPeriodsInDays.Count(); i++)
         {
-            @:x[@i] = @i;
-            @:y[@i] = @Math.Abs(Model.StayPeriodsInDays.ElementAt(i));
+            @:x[@i] = @Math.Abs(Model.StayPeriodsInDays.ElementAt(i));
         }
 
         var trace = {
             x: x,
-            y: y,
-            type: 'bar'
+            type: 'histogram'
         };
         var data = [trace];
         var layout = {
             title: "Stay Period for Patients with " + camelize("@Model.Illness.Name"),
             xaxis: {
-                title: "Patient Number From Sample"
+                title: "Stay Period (Days)"
             },
             yaxis: {
-                title: "Stay Period (Days)"
+                title: "Number of Patients"
             },
             bargap: 0
         };
-        Plotly.newPlot('stayPeriodBarChart', data, layout);
+        Plotly.newPlot('stayPeriodChart', data, layout);
     </script>
 }
