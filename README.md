@@ -1,7 +1,9 @@
-# CSS475codeFirstDatabase
-UWB 475 Final Project. Medical database utilizing Code First to create a MySql database.
+# CSS475 RATMedical
+Final Project for UWB CSS 475 Autumn 2017
 
-CS 475 Final Project: Medical Database.
-Team RAT
+Dr. Erika Parsons
 
-TODO: add more detailed description and stuff...
+# Authored by Team RAT:
+ * Ryan Palm
+ * Albert Kwong
+ * Trystan Cannon
