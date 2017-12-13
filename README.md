@@ -3,7 +3,7 @@ Final Project for UWB CSS 475 Autumn 2017
 
 Dr. Erika Parsons
 
-By:
+# Authored by Team RAT:
  * Ryan Palm
  * Albert Kwong
  * Trystan Cannon
