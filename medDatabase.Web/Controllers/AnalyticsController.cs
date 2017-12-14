@@ -41,8 +41,6 @@ namespace medDatabase.Web.Controllers
             return StayPeriodVisualization(illnessName);
         }
 
-        // Calculates the average stay period for patients with a given condition.
-        // Uses joins on medical history, illnessName, and patient.
         public ActionResult StayPeriodVisualization(string illnessName)
         {
             if (!IllnessExists(illnessName))
@@ -61,13 +59,53 @@ namespace medDatabase.Web.Controllers
             return View("StayPeriodVisualization", stayPeriodViewModel);
         }
 
+        public ActionResult DoctorPerformance()
+        {
+            var doctors = _dbContext.Doctors.ToList();
+            var performanceViewModels = new List<DoctorPerformanceViewModel>();
+            foreach (var doctor in doctors)
+            {
+                var doctorEmployeeId = doctor.EmployeeId;
+                var patientsForDoctor = GetPatientsThatHaveSeenDoctor(doctorEmployeeId);
+                var stayPeriods = CalculateStayPeriods(patientsForDoctor);
+                var performanceViewModel = new DoctorPerformanceViewModel
+                {
+                    Doctor = doctor,
+                    PatientStayPeriods = stayPeriods
+                };
+                performanceViewModels.Add(performanceViewModel);
+            }
+            return View(performanceViewModels);
+        }
+
+        private IEnumerable<Patient> GetPatientsThatHaveSeenDoctor(int doctorEmployeeId)
+        {
+            var appointments = _dbContext.Appointments.ToList();
+            var patients = (from appointment in appointments
+                            where appointment.DoctorId == doctorEmployeeId
+                            select appointment.Patient).ToList();
+            return patients;
+        }
+
         private static IEnumerable<int> CalculateStayPeriods(IEnumerable<Patient> patients)
         {
             var stayPeriodsInDays = (from patient in patients
                                      where patient.DischargeDate != null
-                                     select patient.DischargeDate - patient.AdmissionDate into stayPeriod
-                                     select stayPeriod.Value.Days).ToList();
+                                     select CalculateStayPeriod(patient))
+                                     .ToList();
             return stayPeriodsInDays;
+        }
+
+        private static int CalculateStayPeriod(Patient patient)
+        {
+            if (patient.DischargeDate == null)
+            {
+                return 0;
+            }
+            var admissionDate = patient.AdmissionDate;
+            var dischargeDate = patient.DischargeDate;
+            var stayPeriod = (dischargeDate.Value.Date - admissionDate.Date).Days;
+            return stayPeriod;
         }
 
         private IEnumerable<Patient> GetPatientsWithIllness(int illnessId)

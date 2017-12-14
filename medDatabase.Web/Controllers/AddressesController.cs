@@ -36,16 +36,14 @@ namespace medDatabase.Web.Controllers
         // GET: Addresses/Create
         public ActionResult Create()
         {
-            ViewBag.Patient_Id = new SelectList(db.Patients, "Id", "Ssn");
+            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Ssn");
             return View();
         }
 
         // POST: Addresses/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientId,HouseNumber,City,State,ZipCode,Country,Patient_Id,Street")] Address address)
+        public ActionResult Create([Bind(Include = "PatientId,HouseNumber,City,State,ZipCode,Country,PatientId,Street")] Address address)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +52,7 @@ namespace medDatabase.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Patient_Id = new SelectList(db.Patients, "Id", "Ssn", address.PatientId);
+            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Ssn", address.PatientId);
             return View(address);
         }
 
@@ -70,7 +68,7 @@ namespace medDatabase.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Patient_Id = new SelectList(db.Patients, "Id", "Ssn", address.PatientId);
+            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Ssn", address.PatientId);
             return View(address);
         }
 
@@ -79,7 +77,7 @@ namespace medDatabase.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PatientId,HouseNumber,City,State,ZipCode,Country,Patient_Id,Street")] Address address)
+        public ActionResult Edit([Bind(Include = "PatientId,HouseNumber,City,State,ZipCode,Country,Street")] Address address)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +85,7 @@ namespace medDatabase.Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Patient_Id = new SelectList(db.Patients, "Id", "Ssn", address.PatientId);
+            ViewBag.PatientId = new SelectList(db.Patients, "Id", "Ssn", address.Patient);
             return View(address);
         }
 

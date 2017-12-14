@@ -234,6 +234,7 @@
     </Compile>
     <Compile Include="Migrations\MedicalDatabase\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DoctorPerformanceViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoomViewModel.cs" />
@@ -378,6 +379,7 @@
     <Content Include="Views\Crud\Index.cshtml" />
     <Content Include="Views\Rooms\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Analytics\DoctorPerformance.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

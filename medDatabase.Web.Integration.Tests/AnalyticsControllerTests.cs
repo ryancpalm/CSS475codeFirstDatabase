@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using medDatabase.Web.Contexts;
 using medDatabase.Web.Controllers;
@@ -65,6 +66,27 @@ namespace medDatabase.Web.Integration.Tests
             var viewModel = (StayPeriodVisualizationViewModel) view.Model;
             Assert.That(viewModel.Illness.Name, Is.EqualTo(stayPeriodInputViewModel.IllnessName));
             Assert.That(viewModel.StayPeriodsInDays, Is.Not.Null);
+        }
+
+        [Test]
+        [Ignore("Deprecated")]
+        public void DoctorPerformanceReturnsNonemptyStayPeriods()
+        {
+            // Arrange
+            var analyticsController = new AnalyticsController();
+
+            // Act
+            var view = analyticsController.DoctorPerformance() as ViewResult;
+
+            // Assert
+            Assert.That(view, Is.Not.Null);
+            Assert.That(view.Model, Is.Not.Null);
+            var viewModel = (IEnumerable<DoctorPerformanceViewModel>) view.Model;
+            viewModel = viewModel.ToList();
+            foreach (var doctorPerformanceVm in viewModel)
+            {
+                Assert.That(doctorPerformanceVm.PatientStayPeriods, Is.Not.Empty);
+            }
         }
 
         private StayPeriodInputViewModel CreateStayPeriodInputViewModel()

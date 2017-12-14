@@ -1,0 +1,40 @@
+﻿@model IEnumerable<medDatabase.Web.Models.DoctorPerformanceViewModel>
+@{
+    ViewBag.Title = "DoctorPerformance";
+}
+
+<h2>Doctor Performance Analysis</h2>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/Scripts/plotly.js"></script>
+<div id="doctorPerformanceChart"></div>
+<script type="text/javascript">
+    var x = [];
+    var y = [];
+    var i = 0;
+    @foreach (var performanceViewModel in Model)
+    {
+        if (performanceViewModel.PatientStayPeriods.Any())
+        {
+            @:x[i] = "@performanceViewModel.Doctor.Employee.FirstName " + "@performanceViewModel.Doctor.Employee.LastName";
+            @:y[i] = @Math.Abs(performanceViewModel.PatientStayPeriods.Average());
+            @:i++;
+        }
+    }
+
+    var trace = {
+        x: x,
+        y: y,
+        type: 'bar'
+    };
+    var data = [trace];
+    var layout = {
+        title: "Doctor Performance",
+        yaxis: {
+            title: "Average Patient Stay Period"
+        },
+        bargap: 0.1
+    };
+    Plotly.newPlot('doctorPerformanceChart', data, layout);
+</script>
+
